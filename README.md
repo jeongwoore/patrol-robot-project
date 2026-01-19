@@ -111,13 +111,13 @@ ros2 launch nav2_bringup localization_launch.py map:=/절대경로/map.yaml
 ### 5.3 RViz 실행
 
 ```bash
-ros2 run rviz2 rviz2 -d patrol.rviz
+ros2 run rviz2 rviz2 -d rviz/patrol.rviz
 ```
 
 ### 5.4 Patrol Node 실행
 
 ```bash
-ros2 run patrol_pkg dstar_lite
+ros2 run drive dstar_lite
 ```
 
 ---
@@ -126,11 +126,12 @@ ros2 run patrol_pkg dstar_lite
 
 ```text
 patrol-robot-project/
- ├── patrol_pkg/
+ ├── drive/
  │   ├── dstar_lite.py   # D* Lite + Pure Pursuit
- │   ├── yolo_human.py      # 사람 추종
+ ├── yolo/
+ │   ├── yolo_human.py     # 사람 인식
  │   ├── yolo_light.py     # 신호등 인식
- │   └── yolo_detect.py
+ │   └── yolo_detect.py    # 객체 인식
  ├── launch/
  ├── rviz/
  ├── map/
